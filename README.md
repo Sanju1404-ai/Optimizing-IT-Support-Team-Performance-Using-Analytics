@@ -1,5 +1,5 @@
 # Optimizing-IT-Support-Team-Performance-Using-Analytics
-# JobMarketProject – Customer Call List Cleaning + Dashboard
+# Cleaning + Dashboard
 
 ## 1) Problem Statement
 The main goal of this project is to clean a raw customer call list dataset and prepare it for analysis and reporting.
