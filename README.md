@@ -26,14 +26,6 @@ The dataset contains the following columns:
 ---
 
 ## 3) KPIs / Metrics Used
-- Total Customers
-- Total Paying Customers
-- Total Do Not Contact Customers
-- Total Contactable Customers
-- Valid Phone Numbers Count
-- Invalid / Missing Phone Numbers Count
-- Duplicate Phone Numbers Count (removed in final call list)
-
 ---
 
 ## 4) Dashboard Details (Power BI)
@@ -44,6 +36,10 @@ The dashboard shows:
 - Data quality issues (invalid phones / missing values)
 
 ## 5) Key Insights (From Data Cleaning)
+1. Phone numbers were stored in different formats (example: `123-545-5421`, `123/643/9775`, `876|678|3469`).
+2. Some name fields contained unwanted characters (example: `/White`).
+3. The Yes/No columns had inconsistent values like `Yes`, `No`, `Y`, `N`, and blanks.
+4. Some phone numbers were missing or invalid, so those rows were removed from the final call-ready list.
 
 ## 6) Recommendations (Optional)
 1. The dataset should follow a standard input format while entering new customer data.
