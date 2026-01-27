@@ -34,22 +34,7 @@ The dashboard shows:
 - Paying vs Non-paying customers
 - Contactable vs Do-not-contact customers
 - Data quality issues (invalid phones / missing values)
-
-# Netflix Titles Dashboard (Power BI)
-This project analyzes the Netflix Titles dataset using EDA and visualizes key patterns in Power BI.
-KPIs
-Total Titles
-Total Movies
-Total TV Shows
-Dashboard EDA Questions
-Movies vs TV Shows distribution
-Trend of titles by release year
-Top 10 genres
-Top 10 countries
-Rating distribution by type
-Tools Used
-Python (Pandas), Power BI Desktop, Excel/CSV, GitHub
-
+  
 ## 5) Key Insights (From Data Cleaning)
 1. Phone numbers were stored in different formats (example: `123-545-5421`, `123/643/9775`, `876|678|3469`).
 2. Some name fields contained unwanted characters (example: `/White`).
