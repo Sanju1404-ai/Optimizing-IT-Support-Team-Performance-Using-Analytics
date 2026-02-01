@@ -67,6 +67,7 @@ The following Key Performance Indicators were calculated:
 6.SLA Breach Count
 
 -Number of tickets violating SLA conditions
+
 ---
 
 ## 4) Dashboard Details (Power BI)
