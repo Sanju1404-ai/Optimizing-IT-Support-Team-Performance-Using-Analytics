@@ -2,59 +2,117 @@
 # Cleaning + Dashboard
 
 ## 1) Problem Statement
-The main goal of this project is to clean a raw customer call list dataset and prepare it for analysis and reporting.
-The dataset contains customer contact details, but it has many issues like mixed phone number formats, unwanted symbols, and inconsistent Yes/No values.
+IT support teams handle high volumes of tickets daily, but poor data quality, inefficient ticket handling, SLA breaches, and frequent ticket reopens reduce overall performance and customer satisfaction.
 
-After cleaning, a final call-ready dataset is created and used for visualization in Power BI.
+This project focuses on:
+
+Cleaning and validating raw IT support ticket data
+
+Analyzing agent productivity and SLA compliance
+
+Identifying performance bottlenecks
+
+Providing actionable insights to optimize IT support operations
 
 ---
 
 ## 2) Dataset Description
-- File type: Excel (.xlsx)
-- Dataset name: Customer Call List
-- Raw file: `2_Data/raw/Customer Call List.xlsx`
 
-The dataset contains the following columns:
-- CustomerID
-- First_Name
-- Last_Name
-- Phone_Number
-- Address
-- Paying Customer
-- Do_Not_Contact
+Data Source:Kaggle
+
+Each record represents IT support ticket performance at the agent level, including:
+
+Ticket priority and issue type
+
+Tickets assigned vs resolved
+
+Resolution time vs SLA target
+
+Customer satisfaction ratings
+
+Reopened tickets
+
+Data Files:
+
+Data/it_support_team_performance.csv → Raw data
+
+Data/it_support_team_performance_clean.csv → Cleaned & processed data
 
 ---
 
 ## 3) KPIs / Metrics Used
+
+The following Key Performance Indicators were calculated:
+
+1.SLA Compliance Rate
+
+-Percentage of tickets meeting SLA targets
+
+2.Average Resolution Time
+
+-Mean time taken to resolve tickets
+
+3.Resolution Efficiency
+
+-Tickets Resolved ÷ Tickets Assigned
+
+4.First-Time Resolution Rate
+
+-Percentage of tickets not reopened
+
+5.Customer Satisfaction Score (CSAT)
+
+-Average customer rating (1–5)
+
+6.SLA Breach Count
+
+-Number of tickets violating SLA conditions
 ---
 
 ## 4) Dashboard Details (Power BI)
-The dashboard shows:
-- Overall customer summary
-- Paying vs Non-paying customers
-- Contactable vs Do-not-contact customers
-- Data quality issues (invalid phones / missing values)
   
 ## 5) Key Insights (From Data Cleaning)
-1. Phone numbers were stored in different formats (example: `123-545-5421`, `123/643/9775`, `876|678|3469`).
-2. Some name fields contained unwanted characters (example: `/White`).
-3. The Yes/No columns had inconsistent values like `Yes`, `No`, `Y`, `N`, and blanks.
-4. Some phone numbers were missing or invalid, so those rows were removed from the final call-ready list.
 
-## 6) Recommendations (Optional)
-1. The dataset should follow a standard input format while entering new customer data.
-2. Phone numbers should always be stored in a fixed format (example: `123-456-7890`).
-3. A simple ETL process can be followed for future updates:
-   - Extract: Load raw Excel file
-   - Transform: Clean the dataset using Python
-   - Load: Export cleaned file for Power BI reporting
+-Critical priority tickets have the highest SLA breach rate
+
+-Indicates process or escalation inefficiencies rather than agent performance issues
+
+-High ticket volume does not guarantee high efficiency
+
+-Some agents resolve fewer tickets but with higher SLA compliance and CSAT
+
+-Reopened tickets strongly reduce customer satisfaction
+
+-Tickets reopened more than once consistently show CSAT below 3
+
+-SLA flags in raw data were unreliable
+
+-SLA needed recalculation based on business logic
+
+## 6) Recommendations
+
+1.Implement Skill-Based Ticket Routing
+
+-Assign tickets based on agent expertise and issue type
+
+2.Improve First-Time Resolution
+
+-Add quality checks before ticket closure
+
+3.Automate SLA Validation
+
+-Recalculate SLA dynamically instead of relying on manual flags
+
+4.Use ETL Pipeline (KPL / ETL Concept)
+
+-Extract → Validate → Clean → Load → Visualize
+
+-Ensures consistent, scalable reporting
 
 ## 7) Tools Used
 ### Python
 - pandas: Used to load, clean, and process the dataset.
-- regex (re): Used to remove unwanted characters and format phone numbers.
-- openpyxl: Used for reading and writing Excel files.
-
+  
 ### Power BI
 - Used to create dashboards and visualize KPIs.
 
